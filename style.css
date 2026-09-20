@@ -1,3 +1,12 @@
+/* ========================================
+   RETREAT LETTER GENERATOR FOR CHLOE
+   ======================================== */
+
+
+/* ========================================
+   RESET
+   ======================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -5,14 +14,19 @@
 }
 
 
+/* ========================================
+   BODY
+   ======================================== */
+
 body {
     font-family: Arial, Helvetica, sans-serif;
 
     background:
         linear-gradient(
             135deg,
-            #fff7fa,
-            #f4f1ff
+            #fff7fa 0%,
+            #f8f3ff 50%,
+            #fff9fc 100%
         );
 
     color: #333;
@@ -21,14 +35,20 @@ body {
 }
 
 
+/* ========================================
+   MAIN CONTAINER
+   ======================================== */
+
 .container {
     width: 94%;
     max-width: 1400px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 
-/* HEADER */
+/* ========================================
+   HEADER
+   ======================================== */
 
 header {
     text-align: center;
@@ -39,35 +59,46 @@ header {
 header h1 {
     font-size: 2.3rem;
     color: #7b466a;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 
 header p {
-    color: #777;
+    color: #888;
+    font-size: 1rem;
 }
 
 
-/* MAIN */
+/* ========================================
+   MAIN GENERATOR LAYOUT
+   ======================================== */
 
 .generator {
     display: grid;
-    grid-template-columns: 420px 1fr;
+
+    grid-template-columns:
+        minmax(350px, 420px)
+        minmax(0, 1fr);
+
     gap: 30px;
+
     align-items: start;
 }
 
 
-/* CARDS */
+/* ========================================
+   FORM + PREVIEW CARDS
+   ======================================== */
 
 .form-section,
 .preview-section {
-
-    background: white;
+    background: #ffffff;
 
     padding: 28px;
 
     border-radius: 18px;
+
+    border: 1px solid rgba(0, 0, 0, 0.04);
 
     box-shadow:
         0 10px 35px rgba(0, 0, 0, 0.08);
@@ -76,7 +107,6 @@ header p {
 
 .form-section h2,
 .preview-section h2 {
-
     color: #6f3d60;
 }
 
@@ -86,7 +116,9 @@ header p {
 }
 
 
-/* FORM */
+/* ========================================
+   FORM
+   ======================================== */
 
 .form-group {
     margin-bottom: 18px;
@@ -94,12 +126,11 @@ header p {
 
 
 .form-group label {
-
     display: block;
 
     font-size: 0.9rem;
 
-    font-weight: bold;
+    font-weight: 600;
 
     margin-bottom: 7px;
 
@@ -110,39 +141,61 @@ header p {
 input,
 textarea,
 select {
-
     width: 100%;
 
-    border: 1px solid #ddd;
+    border: 1px solid #dedede;
 
-    border-radius: 9px;
+    border-radius: 10px;
 
     padding: 12px 13px;
 
     font-size: 0.95rem;
 
+    font-family: inherit;
+
+    color: #333;
+
+    background: #fff;
+
     outline: none;
 
-    background: white;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
 
-    transition: 0.2s;
+
+input::placeholder,
+textarea::placeholder {
+    color: #aaa;
 }
 
 
 textarea {
-
     min-height: 90px;
 
     resize: vertical;
 
-    font-family: inherit;
+    line-height: 1.5;
+}
+
+
+select {
+    cursor: pointer;
+}
+
+
+input:hover,
+textarea:hover,
+select:hover {
+    border-color: #cdb5c5;
 }
 
 
 input:focus,
 textarea:focus,
 select:focus {
-
     border-color: #a96d95;
 
     box-shadow:
@@ -150,83 +203,111 @@ select:focus {
 }
 
 
-.form-row {
+/* ========================================
+   TONE + LENGTH ROW
+   ======================================== */
 
+.form-row {
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+        1fr 1fr;
 
     gap: 12px;
 }
 
 
-/* BUTTONS */
+/* ========================================
+   BUTTONS
+   ======================================== */
 
 button {
+    font-family: inherit;
 
     cursor: pointer;
 
-    font-size: 0.95rem;
-
-    transition: 0.2s;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 
-.primary-btn {
+button:active {
+    transform: scale(0.98);
+}
 
+
+/* GENERATE BUTTON */
+
+.primary-btn {
     width: 100%;
 
     border: none;
 
     background: #8e5579;
 
-    color: white;
+    color: #fff;
 
-    padding: 14px;
+    padding: 14px 16px;
 
     border-radius: 10px;
 
-    font-weight: bold;
+    font-size: 0.95rem;
+
+    font-weight: 700;
 
     margin-top: 5px;
+
+    box-shadow:
+        0 5px 15px rgba(142, 85, 121, 0.18);
 }
 
 
 .primary-btn:hover {
-
     background: #754361;
 
     transform: translateY(-1px);
+
+    box-shadow:
+        0 7px 18px rgba(142, 85, 121, 0.24);
 }
 
 
-.secondary-btn {
+/* CLEAR BUTTON */
 
+.secondary-btn {
     width: 100%;
 
     border: 1px solid #ddd;
 
-    background: white;
+    background: #fff;
 
     color: #555;
 
-    padding: 12px;
+    padding: 12px 16px;
 
     border-radius: 10px;
+
+    font-size: 0.95rem;
 
     margin-top: 10px;
 }
 
 
 .secondary-btn:hover {
-    background: #f8f8f8;
+    background: #faf7f9;
+
+    border-color: #cdb5c5;
 }
 
 
-/* PREVIEW */
+/* ========================================
+   PREVIEW
+   ======================================== */
 
 .preview-header {
-
     display: flex;
 
     justify-content: space-between;
@@ -238,51 +319,66 @@ button {
 
 
 .preview-label {
-
     font-size: 0.7rem;
 
     letter-spacing: 2px;
 
     color: #a96d95;
 
-    font-weight: bold;
+    font-weight: 700;
 
     margin-bottom: 4px;
 }
 
 
-/* LETTER */
+/* ========================================
+   LETTER PAPER
+   ======================================== */
 
 .letter-paper {
-
-    background: #fffdf9;
+    background:
+        linear-gradient(
+            180deg,
+            #fffefa,
+            #fffdf9
+        );
 
     border: 1px solid #eee7df;
 
-    min-height: 600px;
+    min-height: 620px;
 
     padding: 55px 65px;
 
-    border-radius: 5px;
+    border-radius: 6px;
 
     font-family:
         Georgia,
         "Times New Roman",
         serif;
 
-    font-size: 1.08rem;
+    font-size: 1.07rem;
 
     line-height: 1.9;
 
+    color: #292929;
+
     box-shadow:
-        inset 0 0 30px rgba(120, 90, 70, 0.03);
+        inset 0 0 30px rgba(120, 90, 70, 0.025),
+        0 4px 15px rgba(0, 0, 0, 0.025);
 
     outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 
 .letter-paper:focus {
     border-color: #c99bb9;
+
+    box-shadow:
+        0 0 0 3px rgba(201, 155, 185, 0.10);
 }
 
 
@@ -291,20 +387,34 @@ button {
 }
 
 
-.placeholder-text {
+.letter-paper strong {
+    font-weight: 700;
+}
 
+
+/* PLACEHOLDER */
+
+.placeholder-text {
     color: #aaa;
 
     text-align: center;
 
-    margin-top: 180px;
+    margin-top: 190px;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 0.95rem;
 }
 
 
-/* ACTIONS */
+/* ========================================
+   LETTER ACTION BUTTONS
+   ======================================== */
 
 .letter-actions {
-
     display: flex;
 
     gap: 10px;
@@ -316,29 +426,34 @@ button {
 
 
 .action-btn {
-
     border: 1px solid #ddd;
 
-    background: white;
+    background: #fff;
 
     padding: 10px 15px;
 
-    border-radius: 8px;
+    border-radius: 9px;
 
     color: #555;
+
+    font-size: 0.9rem;
 }
 
 
 .action-btn:hover {
-
-    background: #f7f2f5;
+    background: #f9f4f7;
 
     border-color: #c99bb9;
+
+    transform: translateY(-1px);
 }
 
 
-.edit-note {
+/* ========================================
+   EDIT NOTE
+   ======================================== */
 
+.edit-note {
     color: #999;
 
     font-size: 0.8rem;
@@ -347,15 +462,31 @@ button {
 }
 
 
-/* TOAST */
+/* ========================================
+   FOOTER
+   ======================================== */
+
+footer {
+    text-align: center;
+
+    padding: 35px 20px;
+
+    color: #aaa;
+
+    font-size: 0.85rem;
+}
+
+
+/* ========================================
+   COPY TOAST
+   ======================================== */
 
 #toast {
-
     position: fixed;
 
-    bottom: 30px;
-
     left: 50%;
+
+    bottom: 30px;
 
     transform:
         translateX(-50%)
@@ -363,23 +494,36 @@ button {
 
     background: #333;
 
-    color: white;
+    color: #fff;
 
     padding: 12px 22px;
 
     border-radius: 30px;
 
+    font-size: 0.9rem;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.18);
+
     opacity: 0;
 
-    transition: 0.3s;
+    visibility: hidden;
 
     pointer-events: none;
+
+    z-index: 9999;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
 }
 
 
 #toast.show {
-
     opacity: 1;
+
+    visibility: visible;
 
     transform:
         translateX(-50%)
@@ -387,56 +531,227 @@ button {
 }
 
 
-/* FOOTER */
+/* ========================================
+   TEXT SELECTION
+   ======================================== */
 
-footer {
-
-    text-align: center;
-
-    padding: 35px;
-
-    color: #999;
-
-    font-size: 0.85rem;
+::selection {
+    background: rgba(169, 109, 149, 0.2);
 }
 
 
-/* MOBILE */
+/* ========================================
+   SCROLLBAR
+   ======================================== */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+    background: #f7f3f6;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: #d0b6c7;
+
+    border-radius: 20px;
+
+    border: 2px solid #f7f3f6;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: #b98ca9;
+}
+
+
+/* ========================================
+   TABLET
+   ======================================== */
 
 @media (max-width: 900px) {
+
+    .container {
+        width: 92%;
+    }
+
 
     .generator {
         grid-template-columns: 1fr;
     }
 
+
     .letter-paper {
-        padding: 40px;
+        min-height: 550px;
+
+        padding: 45px;
     }
 }
 
 
+/* ========================================
+   MOBILE
+   ======================================== */
+
 @media (max-width: 550px) {
 
-    header h1 {
-        font-size: 1.8rem;
+    .container {
+        width: 94%;
     }
 
 
-    .form-row {
-        grid-template-columns: 1fr;
+    header {
+        padding:
+            30px 10px
+            22px;
+    }
+
+
+    header h1 {
+        font-size: 1.75rem;
+
+        line-height: 1.2;
+    }
+
+
+    header p {
+        margin-top: 8px;
     }
 
 
     .form-section,
     .preview-section {
         padding: 20px;
+
+        border-radius: 14px;
+    }
+
+
+    .form-row {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+
+    input,
+    textarea,
+    select {
+        font-size: 16px;
     }
 
 
     .letter-paper {
+        min-height: 480px;
 
-        padding: 30px 22px;
+        padding:
+            32px 22px;
 
         font-size: 1rem;
+
+        line-height: 1.8;
+    }
+
+
+    .placeholder-text {
+        margin-top: 140px;
+    }
+
+
+    .letter-actions {
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+    }
+
+
+    .action-btn {
+        width: 100%;
+    }
+
+
+    #toast {
+        width: max-content;
+
+        max-width: 90%;
+
+        text-align: center;
+    }
+}
+
+
+/* ========================================
+   VERY SMALL PHONES
+   ======================================== */
+
+@media (max-width: 360px) {
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+
+    .form-section,
+    .preview-section {
+        padding: 16px;
+    }
+
+
+    .letter-paper {
+        padding:
+            25px 17px;
+    }
+}
+
+
+/* ========================================
+   PRINT
+   ======================================== */
+
+@media print {
+
+    body {
+        background: #fff;
+    }
+
+
+    header,
+    .form-section,
+    .preview-header,
+    .letter-actions,
+    .edit-note,
+    footer,
+    #toast {
+        display: none;
+    }
+
+
+    .generator {
+        display: block;
+    }
+
+
+    .preview-section {
+        padding: 0;
+
+        box-shadow: none;
+
+        border: none;
+    }
+
+
+    .letter-paper {
+        border: none;
+
+        box-shadow: none;
+
+        padding: 0;
+
+        min-height: auto;
     }
 }
