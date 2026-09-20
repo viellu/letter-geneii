@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Retreat Letter Generator
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+
+        <!-- HEADER -->
+
+        <header>
+
+            <h1>
+                Retreat Letter Generator for chloe
+            </h1>
+
+            <p>
+                here ya go
+            </p>
+
+        </header>
+
+
+        <main class="generator">
+
+
+            <!-- LEFT SIDE: FORM -->
+
+            <section class="form-section">
+
+                <h2>
+                    deets
+                </h2>
+
+
+                <!-- RECIPIENT -->
+
+                <div class="form-group">
+
+                    <label for="recipientName">
+                        kung kanino
+                    </label>
+
+                    <input
+                        type="text"
+                        id="recipientName"
+                        placeholder="nickname or what"
+                    >
+
+                </div>
+
+
+                <!-- RELATIONSHIP -->
+
+                <div class="form-group">
+
+                    <label for="relationship">
+                        relationship
+                    </label>
+
+                    <select id="relationship">
+
+                        <option value="friend">
+                            Friend
+                        </option>
+
+                        <option value="best friend">
+                            Best Friend
+                        </option>
+
+                        <option value="classmate">
+                            Classmate
+                        </option>
+
+                        <option value="sibling">
+                            Sibling
+                        </option>
+
+                        <option value="cousin">
+                            Cousin
+                        </option>
+
+                        <option value="child">
+                            Son / Daughter
+                        </option>
+
+                        <option value="partner">
+                            Partner
+                        </option>
+
+                        <option value="babygirl">
+                            babygirl mo
+                        </option>
+
+                        <option value="other">
+                            Others
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- EVENT -->
+
+                <div class="form-group">
+
+                    <label for="retreatName">
+                        Event Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="retreatName"
+                        placeholder="Example: Retreat 2026"
+                    >
+
+                </div>
+
+
+                <!-- APPRECIATION -->
+
+                <div class="form-group">
+
+                    <label for="appreciation">
+                        What do you appreciate about this person?
+                    </label>
+
+                    <textarea
+                        id="appreciation"
+                        placeholder="Example: pagiging mabait kahit nakakainis minsan"
+                    ></textarea>
+
+                </div>
+
+
+                <!-- MEMORY -->
+
+                <div class="form-group">
+
+                    <label for="memory">
+                        Fav memory tgt
+                    </label>
+
+                    <textarea
+                        id="memory"
+                        placeholder="Example: yung mga random na gala at tawanan natin"
+                    ></textarea>
+
+                </div>
+
+
+                <!-- ENCOURAGEMENT -->
+
+                <div class="form-group">
+
+                    <label for="encouragement">
+                        words of encouragement or what
+                    </label>
+
+                    <textarea
+                        id="encouragement"
+                        placeholder="Example: wag ka masyadong ma-pressure sa school"
+                    ></textarea>
+
+                </div>
+
+
+                <!-- PERSONAL MESSAGE -->
+
+                <div class="form-group">
+
+                    <label for="personalMessage">
+                        What do you want them to remember?
+                    </label>
+
+                    <textarea
+                        id="personalMessage"
+                        placeholder="Example: nandito lang ako lagi kahit lagi kitang inaasar"
+                    ></textarea>
+
+                </div>
+
+
+                <!-- TONE + LENGTH -->
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label for="tone">
+                            Letter Tone
+                        </label>
+
+                        <select id="tone">
+
+                            <option value="heartfelt">
+                                Heartfelt
+                            </option>
+
+                            <option value="friendly">
+                                Friendly
+                            </option>
+
+                            <option value="inspirational">
+                                Inspirational
+                            </option>
+
+                            <option value="funny">
+                                Funny & Sweet
+                            </option>
+
+                            <option value="banter">
+                                Banter / Bardagulan
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="length">
+                            Letter Length
+                        </label>
+
+                        <select id="length">
+
+                            <option value="short">
+                                Short
+                            </option>
+
+                            <option
+                                value="medium"
+                                selected
+                            >
+                                Medium
+                            </option>
+
+                            <option value="long">
+                                Long
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- SENDER -->
+
+                <div class="form-group">
+
+                    <label for="senderName">
+                        Your Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="senderName"
+                        placeholder="Example: bogart"
+                    >
+
+                </div>
+
+
+                <!-- GENERATE -->
+
+                <button
+                    id="generateBtn"
+                    class="primary-btn"
+                    type="button"
+                >
+                    Generate Letter
+                </button>
+
+
+                <!-- CLEAR -->
+
+                <button
+                    id="clearBtn"
+                    class="secondary-btn"
+                    type="button"
+                >
+                    Clear Form
+                </button>
+
+            </section>
+
+
+
+            <!-- RIGHT SIDE: LETTER -->
+
+            <section class="preview-section">
+
+
+                <div class="preview-header">
+
+                    <div>
+
+                        <p class="preview-label">
+                            YOUR LETTER
+                        </p>
+
+                        <h2>
+                            Letter Preview
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- GENERATED LETTER -->
+
+                <div
+                    id="letterPreview"
+                    class="letter-paper"
+                    contenteditable="true"
+                >
+
+                    <p class="placeholder-text">
+                        Your generated retreat letter will appear here.
+                    </p>
+
+                </div>
+
+
+                <!-- ACTION BUTTONS -->
+
+                <div class="letter-actions">
+
+
+                    <button
+                        id="regenerateBtn"
+                        class="action-btn"
+                        type="button"
+                    >
+                        ↻ Regenerate
+                    </button>
+
+
+                    <button
+                        id="copyBtn"
+                        class="action-btn"
+                        type="button"
+                    >
+                        📋 Copy
+                    </button>
+
+
+                    <button
+                        id="printBtn"
+                        class="action-btn"
+                        type="button"
+                    >
+                        🖨 Print / Save PDF
+                    </button>
+
+
+                </div>
+
+
+                <p class="edit-note">
+                    Tip: You can click directly inside the letter and edit it.
+                </p>
+
+
+            </section>
+
+
+        </main>
+
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <p>
+                Made with ♥ for meaningful retreat messages.
+            </p>
+
+        </footer>
+
+
+    </div>
+
+
+
+    <!-- COPY NOTIFICATION -->
+
+    <div id="toast">
+        Letter copied!
+    </div>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
